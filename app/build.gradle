@@ -22,13 +22,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions 'version'
+
+    productFlavors {
+        dev {
+            dimension 'version'
+            buildConfigField "String", "BASE_URL", "\"http://10.0.2.2:8282/\""
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 }
 
 dependencies {
@@ -41,4 +53,29 @@ dependencies {
 
     androidTestImplementation deps.android.test_ext
     androidTestImplementation deps.android.test_espresso
+
+    // Koin
+    implementation deps.koin.core
+    implementation deps.koin.android
+
+    testImplementation deps.koin.test
+    testImplementation deps.koin.test_junit4
+
+    // Retrofit
+    implementation deps.retrofit
+
+    // Gson
+    implementation deps.retrofit_gson
+
+    //OkHttp
+    implementation deps.okhttp3.okhttp
+    implementation deps.okhttp3.interceptor
+
+    // Mockito
+    testImplementation deps.mockito
+
+
+    testImplementation "com.squareup.okhttp3:mockwebserver:4.9.2"
+
+    testImplementation deps.kotlin.coroutines_test
 }
