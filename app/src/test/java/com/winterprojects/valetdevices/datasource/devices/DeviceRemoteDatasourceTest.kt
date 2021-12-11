@@ -10,12 +10,8 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.koin.test.inject
 import org.koin.test.mock.declareMock
-import org.mockito.InjectMocks
-import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.Mockito.only
-import org.mockito.MockitoAnnotations.initMocks
-import org.mockito.MockitoAnnotations.openMocks
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -37,7 +33,7 @@ class DeviceRemoteDatasourceTest : BaseTest() {
             Mockito.`when`(clientApi.getAllDevices()).thenReturn(listOf())
 
             //Act
-            deviceRemoteDatasource.getDevices()
+            deviceRemoteDatasource.getAllDevices()
 
             //Assert
             Mockito.verify(clientApi, only()).getAllDevices()
@@ -53,7 +49,7 @@ class DeviceRemoteDatasourceTest : BaseTest() {
             ))
 
             //Act
-            val deviceModelList = deviceRemoteDatasource.getDevices()
+            val deviceModelList = deviceRemoteDatasource.getAllDevices()
 
             //Assert
             Assert.assertEquals(listOf(getDeviceModelTest()), deviceModelList)
