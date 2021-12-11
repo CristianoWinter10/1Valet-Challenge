@@ -14,7 +14,6 @@ import org.mockito.Mockito
 import org.mockito.Mockito.only
 import org.mockito.junit.MockitoJUnitRunner
 
-@RunWith(MockitoJUnitRunner::class)
 class DeviceRemoteDatasourceTest : BaseTest() {
 
     private lateinit var clientApi: DeviceClientApi
