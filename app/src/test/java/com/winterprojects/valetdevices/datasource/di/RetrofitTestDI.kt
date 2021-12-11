@@ -1,4 +1,4 @@
-package com.winterprojects.valetdevices.helpers
+package com.winterprojects.valetdevices.datasource.di
 
 import com.winterprojects.valetdevices.BuildConfig
 import okhttp3.Interceptor
