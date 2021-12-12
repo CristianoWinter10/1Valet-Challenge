@@ -40,6 +40,7 @@ ext.deps = [
         ],
         'kotlin' : [
                 coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}",
+                coroutines_android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}",
                 coroutines_test: "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.coroutines}"
         ],
         'koin': [
