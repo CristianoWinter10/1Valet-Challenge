@@ -12,11 +12,11 @@ import com.winterprojects.valetdevices.common.helpers.OnItemClickListener
 import com.winterprojects.valetdevices.databinding.FragmentDevicesBinding
 import com.winterprojects.valetdevices.domain.devices.models.DeviceModel
 import com.winterprojects.valetdevices.helpers.StateResult
-import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DevicesFragment : Fragment(), OnItemClickListener<DeviceModel> {
 
-    private val devicesViewModel: DevicesViewModel by inject()
+    private val devicesViewModel: DevicesViewModel by viewModel()
 
     private lateinit var devicesBinding: FragmentDevicesBinding
 
@@ -44,7 +44,7 @@ class DevicesFragment : Fragment(), OnItemClickListener<DeviceModel> {
     }
 
     private fun setObservers() {
-        devicesViewModel.devicesLiveData.observe(this) { stateResult ->
+        devicesViewModel.devicesLiveData.observe(viewLifecycleOwner) { stateResult ->
             when (stateResult) {
                 StateResult.Empty -> Toast.makeText(context, "Empty", Toast.LENGTH_LONG).show()
                 is StateResult.ErrorState -> Toast.makeText(context, "Error", Toast.LENGTH_LONG)

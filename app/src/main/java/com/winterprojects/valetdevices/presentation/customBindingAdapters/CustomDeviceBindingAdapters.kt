@@ -47,7 +47,7 @@ fun TextView.handleDevicePrice(deviceModel: DeviceModel) {
 }
 
 @BindingAdapter("loadImage")
-fun ImageView.loadImage(url: String) {
+fun ImageView.loadImage(url: String?) {
     load(url) {
         crossfade(true)
         placeholder(R.drawable.ic_image_placeholder)

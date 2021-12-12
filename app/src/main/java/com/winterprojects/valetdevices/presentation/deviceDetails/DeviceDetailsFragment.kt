@@ -7,11 +7,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.winterprojects.valetdevices.databinding.FragmentDeviceDetailsBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class DeviceDetailsFragment : Fragment() {
 
     private val args: DeviceDetailsFragmentArgs by navArgs()
+
     private lateinit var fragmentDeviceDetailsBinding: FragmentDeviceDetailsBinding
+
+    private val deviceDetailsViewModel: DeviceDetailsViewModel by viewModel {
+        parametersOf(args.device)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,9 +28,15 @@ class DeviceDetailsFragment : Fragment() {
         fragmentDeviceDetailsBinding =
             FragmentDeviceDetailsBinding.inflate(layoutInflater, container, false)
 
-        fragmentDeviceDetailsBinding.device = args.device
+        setObservers()
 
         return fragmentDeviceDetailsBinding.root
+    }
+
+    private fun setObservers() {
+        deviceDetailsViewModel.deviceLiveData.observe(viewLifecycleOwner) { device ->
+            fragmentDeviceDetailsBinding.device = device
+        }
     }
 
 }
