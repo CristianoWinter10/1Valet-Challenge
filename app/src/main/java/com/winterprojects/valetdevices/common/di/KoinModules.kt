@@ -1,6 +1,7 @@
 package com.winterprojects.valetdevices.common.di
 
 import com.winterprojects.valetdevices.business.di.BusinessDI
+import com.winterprojects.valetdevices.datasource.di.DatabaseDI
 import com.winterprojects.valetdevices.datasource.di.DatasourceDI
 import com.winterprojects.valetdevices.datasource.di.RemoteDI
 import com.winterprojects.valetdevices.datasource.di.RetrofitDI
@@ -11,6 +12,7 @@ object KoinModules {
         RetrofitDI.module,
         RemoteDI.module,
         DatasourceDI.module,
+        DatabaseDI.module,
         BusinessDI.module,
         PresentationDI.module
     )

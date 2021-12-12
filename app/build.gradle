@@ -61,6 +61,8 @@ dependencies {
     implementation deps.android.legacy
     implementation deps.android.navigation_fragment_ktx
     implementation deps.android.navigation_ui_ktx
+    implementation deps.android.room_runtime
+    implementation deps.android.room_ktx
 
     testImplementation deps.junit
 
