@@ -1,4 +1,4 @@
-package com.winterprojects.valetdevices.di
+package com.winterprojects.valetdevices.common.di
 
 import com.winterprojects.valetdevices.datasource.di.RemoteDI
 import com.winterprojects.valetdevices.datasource.di.RetrofitDI
