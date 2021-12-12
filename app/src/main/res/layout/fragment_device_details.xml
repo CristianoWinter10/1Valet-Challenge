@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="device"
             type="com.winterprojects.valetdevices.domain.devices.models.DeviceModel" />
@@ -15,7 +14,7 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/showDetailsAppBar"
+            android:id="@+id/deviceDetailsAppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -48,7 +47,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageBackButton"
                         app:layout_constraintVertical_chainStyle="packed"
-                        tools:text="Show's Title" />
+                        tools:text="Device's Title" />
                     <TextView
                         android:id="@+id/textViewDeviceDetailsPrice"
                         style="@style/ValetDevice.SubTitle"
@@ -95,8 +94,8 @@
 
                     <ImageView
                         android:id="@+id/imageViewPosterImageDetails"
-                        android:layout_width="@dimen/show_item_device_image_width"
-                        android:layout_height="@dimen/show_item_device_image_height"
+                        android:layout_width="@dimen/device_item_device_image_width"
+                        android:layout_height="@dimen/device_item_device_image_height"
                         android:layout_margin="@dimen/default_margin_16dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_launcher_foreground"
@@ -113,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
-            app:layout_anchor="@id/showDetailsAppBar"
+            app:layout_anchor="@id/deviceDetailsAppBar"
             app:layout_anchorGravity="bottom"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -133,7 +132,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="The town's inhabitants must deal with surviving the post-apocalyptic conditions while searching for answers about the dome, where it came from and if and when it will go away." />
+                    tools:text="The gas sensor, built on the basis of the gas analyser MQ-2, allows to detect the presence in the surrounding air of hydrocarbon gases (propane, methane, n-butane)." />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
 

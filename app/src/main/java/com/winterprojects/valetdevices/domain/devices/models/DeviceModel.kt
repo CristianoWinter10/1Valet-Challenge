@@ -1,7 +1,6 @@
 package com.winterprojects.valetdevices.domain.devices.models
 
 import android.os.Parcelable
-import com.winterprojects.valetdevices.domain.devices.entities.DeviceFavoriteEntity
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -16,11 +15,12 @@ data class DeviceModel(
     val isFavorite: Boolean
 ) : Parcelable
 
-fun DeviceModel.toDeviceFavoriteEntity(): DeviceFavoriteEntity {
-    return DeviceFavoriteEntity(
+fun DeviceModel.toDeviceFavoriteModel(): DeviceFavoriteModel {
+    return DeviceFavoriteModel(
         id = this.id,
         title = this.title,
         description = this.description,
-        imageUrl = this.imageUrl
+        imageUrl = this.imageUrl,
+        isFavorite = this.isFavorite
     )
 }
