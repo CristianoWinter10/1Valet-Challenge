@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import com.winterprojects.valetdevices.domain.devices.models.DeviceFavoriteModel
 
 
-@Entity
+@Entity(tableName = "DeviceFavorites")
 data class DeviceFavoriteEntity(
     @PrimaryKey
     val id: String,

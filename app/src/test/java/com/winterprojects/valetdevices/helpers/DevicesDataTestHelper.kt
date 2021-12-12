@@ -2,7 +2,6 @@ package com.winterprojects.valetdevices.helpers
 
 import com.winterprojects.valetdevices.domain.devices.dtos.DeviceDto
 import com.winterprojects.valetdevices.domain.devices.entities.DeviceFavoriteEntity
-import com.winterprojects.valetdevices.domain.devices.entities.DeviceFavoriteEntityTest
 import com.winterprojects.valetdevices.domain.devices.models.DeviceFavoriteModel
 import com.winterprojects.valetdevices.domain.devices.models.DeviceModel
 

@@ -1,9 +1,7 @@
 package com.winterprojects.valetdevices.domain.devices.entities
 
-import com.winterprojects.valetdevices.domain.devices.models.toDeviceFavoriteEntity
 import com.winterprojects.valetdevices.helpers.getDeviceFavoriteEntityTest
 import com.winterprojects.valetdevices.helpers.getDeviceFavoriteModelTest
-import com.winterprojects.valetdevices.helpers.getDeviceModelTest
 import org.junit.Assert
 import org.junit.Test
 

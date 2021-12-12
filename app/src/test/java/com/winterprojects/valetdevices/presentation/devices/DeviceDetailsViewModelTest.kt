@@ -2,10 +2,8 @@ package com.winterprojects.valetdevices.presentation.devices
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.winterprojects.valetdevices.business.devices.GetAllDevicesUseCase
 import com.winterprojects.valetdevices.domain.devices.models.DeviceModel
 import com.winterprojects.valetdevices.helpers.BaseTest
-import com.winterprojects.valetdevices.helpers.StateResult
 import com.winterprojects.valetdevices.helpers.getDeviceModelTest
 import com.winterprojects.valetdevices.presentation.deviceDetails.DeviceDetailsViewModel
 import kotlinx.coroutines.Dispatchers
@@ -21,7 +19,6 @@ import org.junit.Test
 import org.junit.rules.TestRule
 import org.junit.runner.RunWith
 import org.koin.test.mock.declareMock
-import org.mockito.Mockito.`when`
 import org.mockito.Mockito.notNull
 import org.mockito.Mockito.verify
 import org.mockito.junit.MockitoJUnitRunner

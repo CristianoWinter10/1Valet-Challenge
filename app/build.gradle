@@ -6,6 +6,7 @@ plugins {
     id 'kotlin-parcelize'
 }
 
+
 android {
     compileSdk 31
 
@@ -61,16 +62,17 @@ dependencies {
     implementation deps.android.legacy
     implementation deps.android.navigation_fragment_ktx
     implementation deps.android.navigation_ui_ktx
-    implementation deps.android.room_runtime
     implementation deps.android.room_ktx
+    implementation deps.android.room_runtime
+    kapt deps.android.room_compiler
 
+    testImplementation deps.android.room_testing
     testImplementation deps.junit
 
     androidTestImplementation deps.android.test_ext
     androidTestImplementation deps.android.test_espresso
     androidTestImplementation deps.android.test_runner
     androidTestImplementation deps.android.test_rules
-
 
 
     // Koin
