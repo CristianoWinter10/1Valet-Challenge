@@ -12,7 +12,6 @@
 
     <dimen name="card_view_corner_radius_default">8dp</dimen>
 
-    <dimen name="default_padding_8dp">8dp</dimen>
     <dimen name="default_padding_16dp">16dp</dimen>
     <dimen name="show_item_device_image_height">156dp</dimen>
 

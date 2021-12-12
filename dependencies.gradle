@@ -19,7 +19,7 @@ ext.versions = [
         'coil': '1.4.0',
         'test_runner':'1.4.0',
         'test_rules':'1.4.0',
-
+        'room': '2.3.0'
 ]
 
 ext.deps = [
@@ -33,7 +33,10 @@ ext.deps = [
                 test_rules: "androidx.test:rules:${versions.test_rules}",
                 legacy: "androidx.legacy:legacy-support-v4:${versions.legacy}",
                 navigation_fragment_ktx:"androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
-                navigation_ui_ktx: "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+                navigation_ui_ktx: "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
+                room_runtime: "androidx.room:room-runtime:${versions.room}",
+                room_compiler: "androidx.room:room-compiler:${versions.room}",
+                room_ktx: "androidx.room:room-ktx:${versions.room}"
         ],
         'google': [
                 material: "com.google.android.material:material:${versions.material}",
