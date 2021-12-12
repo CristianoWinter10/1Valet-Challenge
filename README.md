@@ -9,7 +9,7 @@ A  Mobile Application Version that consumes a mock of data devices
 Android Studio 4.+ 
 The SDK target used to compile the Application is the version 31
 
-Once with the project cloned:
+Once that the project is cloned:
 
 Open the terminal go to the root of the project and run the command "./gradlew wiremockserver" or "gradlew wiremockserver", it will depends on the system
 
