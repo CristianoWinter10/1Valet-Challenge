@@ -9,5 +9,18 @@
         android:id="@+id/devicesFragment"
         android:name="com.winterprojects.valetdevices.presentation.devices.DevicesFragment"
         android:label="fragment_devices"
-        tools:layout="@layout/fragment_devices" />
+        tools:layout="@layout/fragment_devices" >
+        <action
+            android:id="@+id/action_devicesFragment_to_deviceDetailsFragment"
+            app:destination="@id/deviceDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deviceDetailsFragment"
+        android:name="com.winterprojects.valetdevices.presentation.deviceDetails.DeviceDetailsFragment"
+        android:label="DeviceDetailsFragment"
+        tools:layout="@layout/fragment_device_details">
+        <argument
+            android:name="device"
+            app:argType="com.winterprojects.valetdevices.domain.devices.models.DeviceModel" />
+    </fragment>
 </navigation>

@@ -1,5 +1,9 @@
 package com.winterprojects.valetdevices.domain.devices.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class DeviceModel(
     val currency: String,
     val description: String,
@@ -9,4 +13,4 @@ data class DeviceModel(
     val type: String,
     val imageUrl: String,
     val isFavorite: Boolean
-)
+) : Parcelable

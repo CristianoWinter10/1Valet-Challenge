@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="device"
+            type="com.winterprojects.valetdevices.domain.devices.models.DeviceModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/showDetailsAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|snap">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/imageBackButton"
+                        style="@style/ValetDevice.BackButton"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/textViewDeviceDetailsTitle"
+                        style="@style/ValetDevice.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/default_margin_16dp"
+                        android:gravity="center|start"
+                        android:text="@{device.title}"
+                        app:layout_constraintEnd_toStartOf="@id/imageViewPosterImageDetails"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageBackButton"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        tools:text="Show's Title" />
+                    <TextView
+                        android:id="@+id/textViewDeviceDetailsPrice"
+                        style="@style/ValetDevice.SubTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_margin_8dp"
+                        app:handleDevicePrice="@{device}"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintTop_toBottomOf="@id/textViewDeviceDetailsTitle"
+                        app:layout_constraintStart_toStartOf="@id/textViewDeviceDetailsTitle"
+                        app:layout_constraintEnd_toEndOf="@id/textViewDeviceDetailsTitle"
+                        tools:text="27.20 USD" />
+
+                    <TextView
+                        android:id="@+id/textViewDeviceDetailsSensor"
+                        style="@style/ValetDevice.Body"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_margin_8dp"
+                        app:handleDeviceType="@{device.type}"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintTop_toBottomOf="@id/textViewDeviceDetailsPrice"
+                        app:layout_constraintStart_toStartOf="@id/textViewDeviceDetailsTitle"
+                        app:layout_constraintEnd_toEndOf="@id/textViewDeviceDetailsTitle"
+                        tools:text="Sensor" />
+
+                    <Button
+                        android:id="@+id/buttonFavorite"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:handleDeviceFavorite="@{device.favorite}"
+                        app:iconSize="24dp"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintTop_toBottomOf="@id/textViewDeviceDetailsSensor"
+                        app:layout_constraintStart_toStartOf="@id/textViewDeviceDetailsTitle"
+                        app:layout_constraintEnd_toEndOf="@id/textViewDeviceDetailsTitle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:icon="@drawable/ic_favorite_filled"
+                        tools:iconTint="@color/color_favorite_status"
+                        tools:strokeColor="@color/color_primary_variant"
+                        tools:text="@string/favorite"
+                        tools:textColor="@color/default_text_color" />
+
+                    <ImageView
+                        android:id="@+id/imageViewPosterImageDetails"
+                        android:layout_width="@dimen/show_item_device_image_width"
+                        android:layout_height="@dimen/show_item_device_image_height"
+                        android:layout_margin="@dimen/default_margin_16dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_foreground"
+                        app:loadImage="@{device.imageUrl}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_anchor="@id/showDetailsAppBar"
+            app:layout_anchorGravity="bottom"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/default_padding_16dp">
+
+                <TextView
+                    android:id="@+id/textViewDeviceDetailsSummary"
+                    style="@style/ValetDevice.Body"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin_16dp"
+                    android:textStyle="italic"
+                    app:handleDeviceDescription="@{device.description}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="The town's inhabitants must deal with surviving the post-apocalyptic conditions while searching for answers about the dome, where it came from and if and when it will go away." />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

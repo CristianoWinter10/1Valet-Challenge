@@ -4,4 +4,8 @@
     <string name="title">Title</string>
     <string name="no_description_informed">No description informed</string>
     <string name="format_price_currency">%.2f %s</string>
+    <string name="favorite">Favorite</string>
+    <string name="no_type_informed">No type informed</string>
+    <string name="add">Add</string>
+    <string name="remove">Remove</string>
 </resources>

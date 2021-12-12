@@ -15,7 +15,7 @@
     </style>
 
     <style name="ValetDevice.Body">
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="ValetDevice.ValetDeviceSearchView">
@@ -33,4 +33,11 @@
         <item name="android:paddingEnd">@dimen/default_margin_16dp</item>
     </style>
 
+    <style name="ValetDevice.BackButton">
+        <item name="android:src">@drawable/ic_arrow_back</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:padding">@dimen/default_padding_16dp</item>
+    </style>
 </resources>

@@ -5,16 +5,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.winterprojects.valetdevices.common.helpers.OnItemClickListener
 import com.winterprojects.valetdevices.databinding.ItemDeviceBinding
 import com.winterprojects.valetdevices.domain.devices.models.DeviceModel
 
-class DevicesAdapter :
+class DevicesAdapter(private val onItemClickListener: OnItemClickListener<DeviceModel>) :
     ListAdapter<DeviceModel, DevicesAdapter.DeviceViewHolder>(diffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeviceViewHolder {
         val binding =
             ItemDeviceBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return DeviceViewHolder(binding)
+        return DeviceViewHolder(binding, onItemClickListener)
     }
 
     override fun onBindViewHolder(holder: DeviceViewHolder, position: Int) {
@@ -22,11 +23,14 @@ class DevicesAdapter :
     }
 
     class DeviceViewHolder(
-        private val binding: ItemDeviceBinding
+        private val binding: ItemDeviceBinding,
+        private val onItemClickListener: OnItemClickListener<DeviceModel>
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(deviceModel: DeviceModel) {
             binding.device = deviceModel
+
+            itemView.setOnClickListener { onItemClickListener.onItemClick(deviceModel) }
         }
     }
 
