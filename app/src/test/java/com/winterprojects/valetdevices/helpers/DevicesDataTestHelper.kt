@@ -27,6 +27,17 @@ fun getDeviceModelTest() = DeviceModel(
     isFavorite = false
 )
 
+fun getDeviceModelTest(isFavorite:Boolean = false) = DeviceModel(
+    currency = "USD",
+    description = "",
+    id = "1234",
+    price = 20.00,
+    title = "Sensor",
+    type = "Sensor",
+    imageUrl = "Test Sensor",
+    isFavorite = isFavorite
+)
+
 fun getDeviceFavoriteEntityTest() = DeviceFavoriteEntity(
     description = "",
     id = "1234",

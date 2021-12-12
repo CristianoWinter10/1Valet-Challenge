@@ -2,8 +2,8 @@
 <resources>
     <dimen name="search_view_height">56dp</dimen>
 
-    <dimen name="show_item_device_image_width">128dp</dimen>
-    <dimen name="show_item_height">156dp</dimen>
+    <dimen name="device_item_device_image_width">128dp</dimen>
+    <dimen name="device_item_device_image_height">156dp</dimen>
 
     <dimen name="default_margin_8dp">8dp</dimen>
     <dimen name="default_margin_16dp">16dp</dimen>
@@ -13,6 +13,5 @@
     <dimen name="card_view_corner_radius_default">8dp</dimen>
 
     <dimen name="default_padding_16dp">16dp</dimen>
-    <dimen name="show_item_device_image_height">156dp</dimen>
 
 </resources>

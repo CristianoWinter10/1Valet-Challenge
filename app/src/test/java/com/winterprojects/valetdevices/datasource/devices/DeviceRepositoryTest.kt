@@ -4,20 +4,23 @@ import com.winterprojects.valetdevices.helpers.BaseTest
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
-import org.koin.test.inject
 import org.koin.test.mock.declareMock
 import org.mockito.Mockito
 import org.mockito.Mockito.only
 
-class DeviceRepositoryTest : BaseTest() {
+class DeviceRepositoryTest: BaseTest() {
 
     private lateinit var deviceRemoteDatasource: DeviceRemoteDatasource
 
-    private val deviceRepository: DeviceRepository by inject()
+    private lateinit var deviceLocalDatasource: DeviceLocalDatasource
+
+    private lateinit var deviceRepository: DeviceRepository
 
     @Before
     fun setup() {
         deviceRemoteDatasource = declareMock()
+        deviceLocalDatasource = declareMock()
+        deviceRepository = DeviceRepositoryImpl(deviceRemoteDatasource, deviceLocalDatasource)
     }
 
     @Test
