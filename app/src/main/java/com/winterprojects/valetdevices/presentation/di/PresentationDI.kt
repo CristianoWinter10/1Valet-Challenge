@@ -3,6 +3,7 @@ package com.winterprojects.valetdevices.presentation.di
 import com.winterprojects.valetdevices.domain.devices.models.DeviceModel
 import com.winterprojects.valetdevices.presentation.deviceDetails.DeviceDetailsViewModel
 import com.winterprojects.valetdevices.presentation.devices.DevicesViewModel
+import com.winterprojects.valetdevices.presentation.favorites.FavoritesViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -13,7 +14,11 @@ object PresentationDI {
         }
 
         viewModel { (device: DeviceModel) ->
-            DeviceDetailsViewModel(device)
+            DeviceDetailsViewModel(device, get(), get())
+        }
+
+        viewModel {
+            FavoritesViewModel(get(), get(), get())
         }
     }
 }

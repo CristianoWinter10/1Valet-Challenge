@@ -12,4 +12,6 @@ interface DeviceLocalDatasource {
 
     fun checkDeviceIsAlreadyFavorite(deviceId: String): Flow<Boolean>
 
+    suspend fun fetchAllFavoriteDevices(): List<DeviceFavoriteModel>
+
 }

@@ -13,5 +13,6 @@
     <dimen name="card_view_corner_radius_default">8dp</dimen>
 
     <dimen name="default_padding_16dp">16dp</dimen>
+    <dimen name="image_button_default_icon_size">24dp</dimen>
 
 </resources>

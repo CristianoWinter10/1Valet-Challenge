@@ -12,6 +12,10 @@ class DeviceRepositoryImpl(
         return deviceRemoteDatasource.getAllDevices()
     }
 
+    override suspend fun fetchAllFavoriteDevices(): List<DeviceFavoriteModel> {
+        return deviceLocalDatasource.fetchAllFavoriteDevices()
+    }
+
     override fun checkDeviceIsAlreadyFavorite(deviceId: String): Flow<Boolean> {
         return deviceLocalDatasource.checkDeviceIsAlreadyFavorite(deviceId)
     }

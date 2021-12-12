@@ -23,4 +23,8 @@ class DeviceLocalDatasourceImpl(private val deviceDao: DeviceDao) : DeviceLocalD
         return deviceDao.checkIsFavorite(deviceId).distinctUntilChanged()
     }
 
+    override suspend fun fetchAllFavoriteDevices(): List<DeviceFavoriteModel> {
+        return deviceDao.fetchAll().map { it.toModel() }
+    }
+
 }

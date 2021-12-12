@@ -12,4 +12,6 @@ interface DeviceRepository {
     suspend fun upInsertDeviceFavorite(deviceFavoriteModel: DeviceFavoriteModel): Boolean
 
     suspend fun deleteDeviceFavorite(deviceFavoriteModel: DeviceFavoriteModel)
+
+    suspend fun fetchAllFavoriteDevices(): List<DeviceFavoriteModel>
 }
