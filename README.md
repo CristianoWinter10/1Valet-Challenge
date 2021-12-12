@@ -11,7 +11,11 @@ The SDK target used to compile the Application is the version 31
 
 Once that the project is cloned:
 
-Open the terminal go to the root of the project and run the command "./gradlew wiremockserver" or "gradlew wiremockserver", it will depends on the system
+Open the terminal go to the root of the project and run the command "./gradlew wiremockserver" or "gradlew wiremockserver", it will depends on the system.
+
+Once that wiremock is running, you can run the application.
+
+OBS: The wiremock runs on port 8282, so be sure the it is not blocked by the firewall. 
 
 If you want to run your application on a physical device, you will will to change the buildConfigField value of property "BASE_URL" on the build.gradle of module app:
 
