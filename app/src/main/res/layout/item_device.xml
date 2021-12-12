@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="device"
+            type="com.winterprojects.valetdevices.domain.devices.models.DeviceModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/show_item_height"
+        android:layout_marginHorizontal="@dimen/default_margin_8dp"
+        android:layout_marginVertical="@dimen/default_margin_8dp"
+        android:backgroundTint="@color/show_item_card_background"
+        app:cardCornerRadius="@dimen/card_view_corner_radius_default">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewDevice"
+                android:layout_width="@dimen/show_item_device_image_width"
+                android:layout_height="@dimen/show_item_device_image_height"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:loadImage="@{device.imageUrl}"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/ic_launcher_foreground" />
+            <TextView
+                android:id="@+id/textViewTitle"
+                style="@style/ValetDevice.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/default_margin_8dp"
+                android:layout_marginTop="@dimen/default_margin_8dp"
+                android:includeFontPadding="false"
+                android:text="@{device.title}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewDevice"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Show's Title" />
+            <TextView
+                android:id="@+id/textViewDescription"
+                style="@style/ValetDevice.Body"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="@dimen/default_margin_8dp"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:textStyle="italic"
+                app:handleDeviceDescription="@{device.description}"
+                app:layout_constraintBottom_toTopOf="@id/textViewPrice"
+                app:layout_constraintEnd_toEndOf="@id/textViewTitle"
+                app:layout_constraintStart_toStartOf="@id/textViewTitle"
+                app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+                tools:text="This Emmy winning series is a comic look at the assorted humiliations" />
+            <TextView
+                android:id="@+id/textViewPrice"
+                style="@style/ValetDevice.Text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/default_margin_8dp"
+                android:layout_marginBottom="@dimen/default_margin_8dp"
+                android:textColor="@color/color_primary"
+                app:handleDevicePrice="@{device}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/textViewTitle"
+                app:layout_constraintStart_toStartOf="@id/textViewTitle"
+                tools:text="56 USD" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,19 @@
+package com.winterprojects.valetdevices.presentation.devices
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.winterprojects.valetdevices.R
+
+class DevicesFragment : Fragment() {
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_devices, container, false)
+    }
+
+}

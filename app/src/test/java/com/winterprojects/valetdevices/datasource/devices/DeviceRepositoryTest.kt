@@ -4,12 +4,10 @@ import com.winterprojects.valetdevices.helpers.BaseTest
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
 import org.koin.test.inject
 import org.koin.test.mock.declareMock
 import org.mockito.Mockito
 import org.mockito.Mockito.only
-import org.mockito.junit.MockitoJUnitRunner
 
 class DeviceRepositoryTest : BaseTest() {
 

@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">ValetDevices</string>
+    <string name="app_name">Valet Devices</string>
+    <string name="home">Home</string>
+    <string name="title">Title</string>
+    <string name="no_description_informed">No description informed</string>
+    <string name="format_price_currency">$d $s</string>
 </resources>

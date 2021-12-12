@@ -11,7 +11,6 @@ import org.junit.Before
 import org.junit.Test
 import org.koin.test.inject
 import org.koin.test.mock.declareMock
-import org.mockito.ArgumentMatchers.anyString
 import org.mockito.Mockito
 
 class GetAllDevicesUseCaseTest: BaseTest() {

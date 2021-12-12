@@ -1,7 +1,7 @@
 package com.winterprojects.valetdevices
 
 import android.app.Application
-import com.winterprojects.valetdevices.di.KoinModules
+import com.winterprojects.valetdevices.common.di.KoinModules
 import org.koin.core.context.startKoin
 
 class ValetDevicesApplication: Application() {
