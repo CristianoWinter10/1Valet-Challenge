@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.winterprojects.valetdevices.common.helpers.OnItemClickListener
 import com.winterprojects.valetdevices.databinding.FragmentDevicesBinding
 import com.winterprojects.valetdevices.domain.devices.models.DeviceModel
 import com.winterprojects.valetdevices.helpers.StateResult
 import org.koin.android.ext.android.inject
 
-class DevicesFragment : Fragment() {
+class DevicesFragment : Fragment(), OnItemClickListener<DeviceModel> {
 
     private val devicesViewModel: DevicesViewModel by inject()
 
@@ -34,7 +36,7 @@ class DevicesFragment : Fragment() {
     }
 
     private fun setAdapters() {
-        devicesAdapter = DevicesAdapter()
+        devicesAdapter = DevicesAdapter(this)
         devicesBinding.recyclerViewDevices.apply {
             adapter = devicesAdapter
             layoutManager = LinearLayoutManager(context)
@@ -55,6 +57,11 @@ class DevicesFragment : Fragment() {
 
     private fun updateList(devices: List<DeviceModel>) {
         devicesAdapter.submitList(devices)
+    }
+
+    override fun onItemClick(device: DeviceModel) {
+        val action = DevicesFragmentDirections.actionDevicesFragmentToDeviceDetailsFragment(device)
+        findNavController().navigate(action)
     }
 
 }
