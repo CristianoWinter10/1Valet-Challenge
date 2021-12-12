@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.winterprojects.valetdevices.databinding.ItemDeviceBinding
 import com.winterprojects.valetdevices.domain.devices.models.DeviceModel
 
-class DevicesAdapter() :
+class DevicesAdapter :
     ListAdapter<DeviceModel, DevicesAdapter.DeviceViewHolder>(diffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeviceViewHolder {

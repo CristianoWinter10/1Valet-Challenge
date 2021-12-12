@@ -3,5 +3,5 @@
     <string name="home">Home</string>
     <string name="title">Title</string>
     <string name="no_description_informed">No description informed</string>
-    <string name="format_price_currency">$d $s</string>
+    <string name="format_price_currency">%.2f %s</string>
 </resources>

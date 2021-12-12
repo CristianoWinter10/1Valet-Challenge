@@ -1,6 +1,5 @@
-package com.winterprojects.valetdevices.datasource.business.devices
+package com.winterprojects.valetdevices.business.devices
 
-import com.winterprojects.valetdevices.business.devices.GetAllDevicesUseCase
 import com.winterprojects.valetdevices.datasource.devices.DeviceRepository
 import com.winterprojects.valetdevices.helpers.BaseTest
 import com.winterprojects.valetdevices.helpers.StateResult

@@ -1,22 +1,54 @@
 [
   {
-    "Id": "1234",
-    "Type": "Sensor",
-    "Price": 20,
-    "Currency": "USD",
+    "id": "1",
+    "type": "Sensor",
+    "price": 20.79,
+    "currency": "USD",
     "isFavorite": false,
-    "imageUrl": "",
-    "Title": "Test Sensor",
-    "Description": ""
+    "imageUrl": "https://www.elecrow.com/pub/media/catalog/product/cache/f8158826193ba5faa8b862a9bd1eb9e9/1/3/13993673140_1.jpg",
+    "title": "Gas Sensor",
+    "description": "The gas sensor, built on the basis of the gas analyser MQ-2, allows to detect the presence in the surrounding air of hydrocarbon gases (propane, methane, n-butane)."
   },
   {
-    "Id": "1235",
-    "Type": "Thermostat",
-    "Price": 25,
-    "Currency": "USD",
+    "id": "2",
+    "type": "Sensor",
+    "price": 5.68,
+    "currency": "USD",
     "isFavorite": false,
-    "imageUrl": "",
-    "Title": "Test Thermostat",
-    "Description": ""
+    "imageUrl": "https://www.robotshop.com/media/catalog/product/cache/image/1350x/9df78eab33525d08d6e5fb8d27136e95/d/h/dht11-temperature-humidity-sensor-module.jpg",
+    "title": "Digital Temperature and Humidity Sensor",
+    "description": "ESP8266 is a highly integrated chip designed for the needs of a new connected world. It offers a complete and self-contained Wi-Fi networking solution, allowing it to either host the application or to offload all Wi-Fi networking functions from another application processor.\nESP8266 has powerful on-board processing and storage capabilities that allow it to be integrated with the sensors and other application specific devices through its GPIOs with minimal development up-front and minimal loading during runtime. Its high degree of on-chip integration allows for minimal external circuitry, and the entire solution, including front-end module, is designed to occupy minimal PCB area."
+  },
+  {
+    "id": "3",
+    "type": "Sensor",
+    "price": 27.68,
+    "currency": "USD",
+    "isFavorite": false,
+    "imageUrl": "https://imgaz1.staticbg.com/thumb/large/oaupload/ser1/banggood/images/25/B2/b39ca092-eaf3-410d-9f7e-058972ad5e2c.JPG.webp",
+    "title": "Infrared Obstacle Avoidance",
+    "description": "The sensor module light is adaptable to the environment, it has a pair of infrared transmitting and receiving tube, tube infrared emitting a certain frequency, when detecting direction meet with obstacles (reflecting surface), reflected infrared receiving tube, after the comparator circuit processing, green indicator will light up, at the same time signal output interface and output digital signal (a low level 0V) signal, can be adjusted through the potentiometer knob detection distance, effective distance range 2 ~ 30 cm, the working voltage of 3.3 V to 5 V.The detection range of the sensor can through the potentiometer to adjust and have small interference, easy to assemble, easy to use, etc, can be widely used in robot obstacle avoidance, obstacle avoidance car, line count and black and white line tracking and so on many occasions.\n"
+  },
+  {
+    "id": "4",
+    "type": "Sensor",
+    "price": 28.47,
+    "currency": "USD",
+    "isFavorite": false,
+    "imageUrl": "https://imgaz.staticbg.com/thumb/large/oaupload/banggood/images/94/98/8cdca5af-5a91-4622-92eb-b5602c6df6f0.JPG.webp",
+    "title": "Digital Barometric Pressure Sensor Module Water",
+    "description": "Voltage: 3.3 -5V\n\nPressure: 0 -40KPa\n\nThe module uses a high-precision AD sampling chip and a 0-40KPa Air pressure sensor. It can be connected to a 2.5mm tube and detects water level and other pressure.\n\n5K Ohm resistance bridge sensor, the specific pressure value needs to be calculated."
+  },
+  {
+    "id": "5",
+    "type": "Sensor",
+    "price": 5.68,
+    "currency": "USD",
+    "isFavorite": false,
+    "imageUrl": "https://imgaz.staticbg.com/thumb/large/oaupload/banggood/images/08/35/7a671078-a9fd-4b07-8a70-9957aff70192.JPG.webp",
+    "title": "Photodiode Sensor Controller",
+    "description": "Using sensitive photosensitive resistance sensor\nThe comparator output signal is clean, good waveform, driving ability, more than 15mA.\nWith adjustable potentiometer to adjust the brightness of the light measuring\nThe working voltage 3.3V-5V\nThe output form: DO digital switching outputs (0 and 1) and AO analog voltage output\nA fixed bolt holes for easy installation\nPCB Size: 3.2cm x 1.4cm\nUsing a wide voltage LM393 comparator"
   }
+
+
 ]

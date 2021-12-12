@@ -29,7 +29,8 @@ android {
     productFlavors {
         dev {
             dimension 'version'
-            buildConfigField "String", "BASE_URL", "\"http://10.0.2.2:8282/\""
+//            buildConfigField "String", "BASE_URL", "\"http://10.0.2.2:8282/\""
+            buildConfigField "String", "BASE_URL", "\"http://192.168.1.2:8282/\""
         }
     }
 
@@ -65,6 +66,9 @@ dependencies {
     androidTestImplementation deps.android.test_espresso
     androidTestImplementation deps.android.test_runner
     androidTestImplementation deps.android.test_rules
+
+
+
     // Koin
     implementation deps.koin.core
     implementation deps.koin.android
@@ -85,9 +89,15 @@ dependencies {
     // Mockito
     testImplementation deps.mockito
 
+    // Coroutines
+    implementation deps.kotlin.coroutines
+    implementation deps.kotlin.coroutines_android
 
     testImplementation deps.kotlin.coroutines_test
 
     // Coil
     implementation deps.coil
+
+    testImplementation 'android.arch.core:core-testing:1.1.1'
+
 }
