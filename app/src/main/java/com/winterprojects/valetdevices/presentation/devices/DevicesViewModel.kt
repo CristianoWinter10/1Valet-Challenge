@@ -40,7 +40,7 @@ class DevicesViewModel(
             currentListDevices?.let { devices ->
                 devicesMutableLiveData.emit(StateResult.Loaded(devices.filter {
                     it.title.lowercase().contains(
-                        title
+                        title.lowercase()
                     )
                 }))
             }
