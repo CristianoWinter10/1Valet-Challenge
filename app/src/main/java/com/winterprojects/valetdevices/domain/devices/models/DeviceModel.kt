@@ -12,7 +12,7 @@ data class DeviceModel(
     val title: String,
     val type: String,
     val imageUrl: String,
-    val isFavorite: Boolean
+    var isFavorite: Boolean
 ) : Parcelable
 
 fun DeviceModel.toDeviceFavoriteModel(): DeviceFavoriteModel {

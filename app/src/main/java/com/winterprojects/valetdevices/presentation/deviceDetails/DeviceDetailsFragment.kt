@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.winterprojects.valetdevices.databinding.FragmentDeviceDetailsBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -29,6 +30,7 @@ class DeviceDetailsFragment : Fragment() {
             FragmentDeviceDetailsBinding.inflate(layoutInflater, container, false)
 
         setObservers()
+        initializeListeners()
 
         return fragmentDeviceDetailsBinding.root
     }
@@ -36,6 +38,16 @@ class DeviceDetailsFragment : Fragment() {
     private fun setObservers() {
         deviceDetailsViewModel.deviceLiveData.observe(viewLifecycleOwner) { device ->
             fragmentDeviceDetailsBinding.device = device
+        }
+    }
+
+    private fun initializeListeners() {
+        fragmentDeviceDetailsBinding.imageBackButton.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
+        fragmentDeviceDetailsBinding.buttonFavorite.setOnClickListener {
+            deviceDetailsViewModel.updateFavoriteStatus()
         }
     }
 
