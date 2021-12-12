@@ -1,5 +1,5 @@
 
-This project will be keep improving...
+This project will keep being improved...
 
 # 1Valet-Challenge
 A  Mobile Application Version that consumes a mock of data devices
