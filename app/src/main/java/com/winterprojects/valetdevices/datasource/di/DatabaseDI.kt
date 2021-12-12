@@ -14,5 +14,9 @@ object DatabaseDI {
                 ValetDevicesDatabase.DATABASE_NAME
             ).build()
         }
+
+        single {
+            get<ValetDevicesDatabase>().deviceDao()
+        }
     }
 }

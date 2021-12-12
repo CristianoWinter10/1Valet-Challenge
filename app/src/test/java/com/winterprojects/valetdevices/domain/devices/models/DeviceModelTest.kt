@@ -1,7 +1,5 @@
 package com.winterprojects.valetdevices.domain.devices.models
 
-import com.winterprojects.valetdevices.domain.devices.dtos.toModel
-import com.winterprojects.valetdevices.helpers.getDeviceDtoTest
 import com.winterprojects.valetdevices.helpers.getDeviceFavoriteEntityTest
 import com.winterprojects.valetdevices.helpers.getDeviceModelTest
 import org.junit.Assert

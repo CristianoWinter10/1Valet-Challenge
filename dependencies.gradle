@@ -1,6 +1,6 @@
 ext.versions = [
         'gradle':'7.0.3',
-        'kotlin':'1.6.0',
+        'kotlin':'1.5.21',
         'core':'1.7.0',
         'appcompat':'1.3.1',
         'material':'1.4.0',
@@ -36,7 +36,8 @@ ext.deps = [
                 navigation_ui_ktx: "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
                 room_runtime: "androidx.room:room-runtime:${versions.room}",
                 room_compiler: "androidx.room:room-compiler:${versions.room}",
-                room_ktx: "androidx.room:room-ktx:${versions.room}"
+                room_ktx: "androidx.room:room-ktx:${versions.room}",
+                room_testing: "androidx.room:room-testing:${versions.room}"
         ],
         'google': [
                 material: "com.google.android.material:material:${versions.material}",
