@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
+    android:id="@+id/emptyState">
+
+    <ImageView
+        android:id="@+id/imageNoData"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:src="@drawable/ic_no_data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        style="@style/ValetDevice.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin_16dp"
+        android:text="@string/there_is_no_data"
+        app:layout_constraintEnd_toEndOf="@id/imageNoData"
+        app:layout_constraintStart_toStartOf="@id/imageNoData"
+        app:layout_constraintTop_toBottomOf="@id/imageNoData" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

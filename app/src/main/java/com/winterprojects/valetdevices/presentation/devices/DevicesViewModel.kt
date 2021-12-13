@@ -22,7 +22,8 @@ class DevicesViewModel(
     val devicesLiveData: StateFlow<StateResult<List<DeviceModel>>>
         get() = devicesMutableLiveData
 
-    private val devicesMutableLiveData = MutableStateFlow<StateResult<List<DeviceModel>>>(StateResult.Loading)
+    private val devicesMutableLiveData =
+        MutableStateFlow<StateResult<List<DeviceModel>>>(StateResult.Loading)
 
     init {
         viewModelScope.launch {
@@ -38,11 +39,18 @@ class DevicesViewModel(
     fun applyFilter(title: String) {
         viewModelScope.launch {
             currentListDevices?.let { devices ->
-                devicesMutableLiveData.emit(StateResult.Loaded(devices.filter {
+                devices.filter {
                     it.title.lowercase().contains(
                         title.lowercase()
                     )
-                }))
+                }.let { filteredList ->
+                    if (filteredList.isEmpty()) {
+                        devicesMutableLiveData.emit(StateResult.Empty)
+
+                    } else {
+                        devicesMutableLiveData.emit(StateResult.Loaded(filteredList))
+                    }
+                }
             }
         }
     }

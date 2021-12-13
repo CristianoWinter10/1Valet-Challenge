@@ -11,7 +11,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.winterprojects.valetdevices.common.helpers.OnItemClickListener
 import com.winterprojects.valetdevices.common.helpers.SearchableQueryTextListener
+import com.winterprojects.valetdevices.common.helpers.gone
 import com.winterprojects.valetdevices.common.helpers.hideSoftKeyboard
+import com.winterprojects.valetdevices.common.helpers.visible
 import com.winterprojects.valetdevices.databinding.FragmentDevicesBinding
 import com.winterprojects.valetdevices.domain.devices.models.DeviceModel
 import com.winterprojects.valetdevices.helpers.StateResult
@@ -56,17 +58,38 @@ class DevicesFragment : Fragment(), OnItemClickListener<DeviceModel> {
     }
 
     private fun setObservers() {
-        this.viewLifecycleOwner.lifecycleScope.launchWhenResumed {
+        this.viewLifecycleOwner.lifecycleScope.launchWhenCreated {
             devicesViewModel.devicesLiveData.collect { stateResult ->
                 when (stateResult) {
-                    StateResult.Empty -> Toast.makeText(context, "Empty", Toast.LENGTH_LONG).show()
-                    is StateResult.ErrorState -> Toast.makeText(context, "Error", Toast.LENGTH_LONG)
+                    StateResult.Empty -> showEmptyState()
+                    is StateResult.ErrorState -> Toast.makeText(context, stateResult.errorMsg, Toast.LENGTH_LONG)
                         .show()
-                    is StateResult.Loaded -> updateList(stateResult.data)
-                    StateResult.Loading -> Toast.makeText(context, "Loading", Toast.LENGTH_LONG).show()
+                    is StateResult.Loaded -> {
+                        updateList(stateResult.data)
+                        showDataState()
+                    }
+                    StateResult.Loading -> showLoadingState()
                 }
             }
         }
+    }
+
+    private fun showEmptyState() {
+        devicesBinding.emptyStateLayout.emptyState.visible()
+        devicesBinding.loadingStateLayout.loadingState.gone()
+        devicesBinding.recyclerViewDevices.gone()
+    }
+
+    private fun showDataState() {
+        devicesBinding.emptyStateLayout.emptyState.gone()
+        devicesBinding.loadingStateLayout.loadingState.gone()
+        devicesBinding.recyclerViewDevices.visible()
+    }
+
+    private fun showLoadingState() {
+        devicesBinding.emptyStateLayout.emptyState.gone()
+        devicesBinding.loadingStateLayout.loadingState.visible()
+        devicesBinding.recyclerViewDevices.gone()
     }
 
     private fun updateList(devices: List<DeviceModel>) {
