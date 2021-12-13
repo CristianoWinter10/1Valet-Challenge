@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.winterprojects.valetdevices.R
+import com.winterprojects.valetdevices.common.helpers.gone
+import com.winterprojects.valetdevices.common.helpers.visible
 import com.winterprojects.valetdevices.databinding.FragmentFavoritesBinding
 import com.winterprojects.valetdevices.domain.devices.models.DeviceFavoriteModel
 import com.winterprojects.valetdevices.helpers.StateResult
@@ -20,14 +23,14 @@ class FavoritesFragment : Fragment(),
 
     private lateinit var favoriteAdapter: FavoriteAdapter
 
-    private lateinit var binding: FragmentFavoritesBinding
+    private lateinit var fragmentFavoritesBinding: FragmentFavoritesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentFavoritesBinding.inflate(
+        fragmentFavoritesBinding = FragmentFavoritesBinding.inflate(
             inflater,
             container,
             false
@@ -36,12 +39,12 @@ class FavoritesFragment : Fragment(),
         initializeAdapters()
         initializeObservers()
 
-        return binding.root
+        return fragmentFavoritesBinding.root
     }
 
     private fun initializeAdapters() {
         favoriteAdapter = FavoriteAdapter( this)
-        binding.recyclerViewFavoriteDevice.apply {
+        fragmentFavoritesBinding.recyclerViewFavoriteDevice.apply {
             adapter = favoriteAdapter
             layoutManager = LinearLayoutManager(context)
         }
@@ -52,9 +55,27 @@ class FavoritesFragment : Fragment(),
             when (result) {
                 is StateResult.Loaded -> {
                     favoriteAdapter.submitList(result.data)
+                    showDataState()
+                }
+                is StateResult.Empty -> {
+                    showEmptyState()
+                }
+                is StateResult.ErrorState -> {
+                    Toast.makeText(context, result.errorMsg, Toast.LENGTH_LONG)
+                        .show()
                 }
             }
         }
+    }
+
+    private fun showEmptyState() {
+        fragmentFavoritesBinding.emptyStateLayout.emptyState.visible()
+        fragmentFavoritesBinding.recyclerViewFavoriteDevice.gone()
+    }
+
+    private fun showDataState() {
+        fragmentFavoritesBinding.emptyStateLayout.emptyState.gone()
+        fragmentFavoritesBinding.recyclerViewFavoriteDevice.visible()
     }
 
     override fun onRemoveFavoriteItemClickListener(

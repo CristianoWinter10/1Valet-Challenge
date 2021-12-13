@@ -11,4 +11,6 @@
     <string name="favorites">Favorites</string>
     <string name="undo_remove_favorite">Undo remove favorite</string>
     <string name="undo">Undo</string>
+    <string name="loading">Loading…</string>
+    <string name="there_is_no_data">There is no data!!</string>
 </resources>
