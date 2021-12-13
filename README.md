@@ -23,7 +23,7 @@ If you want to run your application on a physical device, you will will to chang
 
 And also you will need to allow your ip on network_security_config.xml
 
-<img width="782" alt="Screen Shot 2021-12-12 at 17 48 36" src="https://user-images.githubusercontent.com/8905885/145729066-a5350a5e-6797-4bf7-ad37-2f72ba987541.png">
+<img width="527" alt="Screen Shot 2021-12-13 at 00 20 29" src="https://user-images.githubusercontent.com/8905885/145747270-65f67609-57e2-4448-a008-e7e070057f0b.png">
 
 ## Arquitetura MVVM + Clean Architecture
 
